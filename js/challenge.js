@@ -64,11 +64,8 @@ minus.addEventListener('click', function() {
 // Like an individual number
 const likedList = document.querySelector('ul.likes');
 
-let clicked = 1;
-
 // Trying to use event
-
-let times = 1;
+let times;
 
 heart.addEventListener('click', function() {
     const likeList = document.querySelector('ul.likes');
@@ -76,13 +73,12 @@ heart.addEventListener('click', function() {
         let alreadyLiked = document.getElementById(i);
         alreadyLiked.textContent = `${i} has been clicked ${times} times.`;
         times++;
-        console.log('from if');
     } else {
+        times = 1
         let like = document.createElement('li');
         like.id = i;
         like.textContent = `${i} has been clicked ${times} times.`;
         likeList.append(like);
         times++
-        console.log('from else');
     }
 });
